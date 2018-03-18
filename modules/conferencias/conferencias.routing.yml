@@ -1,0 +1,55 @@
+conferenciasList:
+  path: /conferencias/list
+  defaults:
+      _controller: Drupal\conferencias\Controller\ConferenciasController::lista
+  requirements:
+      _permission: 'conferencias read'
+      #_user_is_logged_in: 'FALSE'
+
+conferenciasList2:
+  path: /conferencias/list2
+  defaults:
+      _controller: Drupal\conferencias\Controller\ConferenciasController::lista2
+  requirements:
+      _permission: 'conferencias read'
+      #_user_is_logged_in: 'FALSE'
+
+conferenciasAdd:
+  path: /conferencias/add
+  defaults:
+    _form: '\Drupal\conferencias\Form\ConferenciasAddForm'
+    _title: 'Crear pregunta'
+  requirements:
+    _permission: 'conferencias add'
+
+conferenciasAdd2:
+  path: /conferencias/add2
+  defaults:
+    _controller: Drupal\conferencias\Controller\ConferenciasController::add
+    _title: 'Crear Conferencias'
+  requirements:
+    _permission: 'conferencias add'
+
+#conferenciasSave:
+#  path: /conferencias/save
+#  defaults:
+#    _controller: Drupal\conferencias\Controller\conferenciasController::save
+#  requirements:
+#    _permission: 'conferencias add'
+
+
+conferenciasDelete:
+  path: '/conferencias/delete/{id}'
+  defaults:
+    _form: 'Drupal\conferencias\Form\ConferenciasDeleteForm'
+    _title: 'Eliminar Conferencias'
+  requirements: 
+    _permission: 'conferencias delete'
+
+conferenciasUpdate:
+  path: '/conferencias/update/{id}'
+  defaults:
+    _form: 'Drupal\conferencias\Form\ConferenciasUpdateForm'
+    _title: 'Modificar Conferencias'
+  requirements:
+    _permission: 'conferencias update'
